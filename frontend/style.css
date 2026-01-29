@@ -14,12 +14,12 @@ body {
     background-color: var(--bg-color);
     
  
-    background-image: radial-gradient(
-        circle at 50% -20%,           
-        rgba(255, 81, 0, 0.65) 0%,     
-        rgba(255, 90, 20, 0.25) 50%,   
-        #121212 100%                   
-    );
+background-image: radial-gradient(
+    circle at 50% -15%,          
+    rgba(255, 81, 0, 0.55) 0%,   
+    rgba(255, 81, 0, 0.1) 35%,   
+    #121212 60%                  
+);
     
     background-attachment: fixed;
     background-size: cover;
@@ -149,11 +149,37 @@ h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 2rem; text-transform: upp
 
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
 .course-card {
-    background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px;
-    border: 1px solid transparent; transition: 0.4s; position: relative;
+    
+    background: rgba(20, 20, 20, 0.7); 
+    backdrop-filter: blur(10px);        
+    -webkit-backdrop-filter: blur(10px); 
+
+    padding: 1.5rem;
+    border-radius: 15px;
+    
+  
+    border: 1px solid rgba(255, 81, 0, 0.15);
+    
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
 }
-.course-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.08); }
-.course-card.grade-100 { border: 1px solid rgba(255, 215, 0, 0.3); } /* קורסי 100 */
+
+.course-card:hover { 
+    
+    transform: translateY(-7px); 
+    
+   
+    background: rgba(255, 81, 0, 0.08); 
+    
+    
+    border-color: rgba(255, 81, 0, 1);
+    
+   
+    box-shadow: 0 10px 30px -10px rgba(255, 81, 0, 0.3);
+}
+
+.course-card.grade-100 { border: 1px solid rgba(255, 215, 0, 0.3); } 
 .course-card.grade-100:hover { border-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
 
 .grade { position: absolute; top: 10px; right: 10px; font-weight: 900; color: var(--accent-orange); font-size: 1.2rem; }
