@@ -230,10 +230,54 @@ h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 2rem; text-transform: upp
 
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    .glass-container { margin: 0; border-radius: 0; min-height: 100vh; padding: 2rem; }
-    nav { padding: 1.5rem; flex-direction: column; gap: 1rem; }
-    #terminal-wrapper { width: 90%; right: 5%; bottom: 10px; }
+    
+    body {
+        background-image: radial-gradient(
+            circle at 50% 5%,  
+            rgba(255, 81, 0, 0.45) 0%, 
+            rgba(255, 81, 0, 0.1) 40%, 
+            #121212 70%
+        );
+        background-attachment: scroll; 
+    }
+
+    h1 { 
+        font-size: 2.2rem; 
+        line-height: 1.2; 
+        margin-bottom: 1.5rem;
+    }
+
+    .glass-container { 
+        padding: 1rem; 
+        width: 95%; 
+        margin: 0 auto;
+    }
+
+    nav { 
+        flex-direction: column; 
+        gap: 1rem; 
+        padding: 1.5rem;
+    }
+    
+    .links { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px;
+    }
+    
+    .links a { margin-left: 0.5rem; margin-right: 0.5rem; }
+
+    #terminal-wrapper { 
+        width: 92%; 
+        right: 4%; 
+        bottom: 15px; 
+    }
+    
+    .skills-grid, .courses-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
 
 .glow-text {
