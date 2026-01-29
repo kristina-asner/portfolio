@@ -1,6 +1,4 @@
-/* === app.js - Full Portfolio Logic === */
 
-/* --- 1. BACKGROUND ANIMATION (Floating Code) --- */
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
@@ -9,7 +7,6 @@ canvas.height = window.innerHeight;
 
 let particlesArray;
 
-// Floating Symbols (מותאם לכישורים שלך)
 const symbols = [
     'Python', 'C++', 'C#', 'SQL', 
     'GIT', 'OOP', '97.13', 
@@ -24,7 +21,6 @@ window.addEventListener('mousemove', function(event) {
     mouse.y = event.y;
 });
 
-// Particle Class
 class Particle {
     constructor(x, y, directionX, directionY, fontSize, text) {
         this.x = x; this.y = y;
@@ -42,13 +38,11 @@ class Particle {
     }
     
     update() {
-        // גבולות מסך
         if (this.x > canvas.width + 50) this.x = -50;
         if (this.x < -50) this.x = canvas.width + 50;
         if (this.y > canvas.height + 50) this.y = -50;
         if (this.y < -50) this.y = canvas.height + 50;
 
-        // אינטראקציה עם עכבר
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx*dx + dy*dy);
@@ -83,14 +77,12 @@ function animate() {
     for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); }
 }
 
-// הפעלת האנימציה
 init(); animate();
 window.addEventListener('resize', function(){
     canvas.width = innerWidth; canvas.height = innerHeight; init();
 });
 
 
-/* --- 2. UI LOGIC (Terminal Toggle) --- */
 
 function toggleTerminal() {
     const terminal = document.getElementById('terminal-wrapper');
@@ -103,30 +95,27 @@ function addMessageToChat(text, sender) {
     msgDiv.classList.add('msg', sender);
     msgDiv.innerHTML = sender === 'user' ? `> ${text}` : text;
     chat.appendChild(msgDiv);
-    chat.scrollTop = chat.scrollHeight; // גלילה למטה אוטומטית
+    chat.scrollTop = chat.scrollHeight; 
 }
 
 
-/* --- 3. BACKEND CONNECTION (Python Server) --- */
 
-// A. טעינת האתגר היומי כשהעמוד עולה
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchDailyChallenge();
 });
 
 async function fetchDailyChallenge() {
     try {
-        const response = await fetch('/api/daily-challenge');
+        const response = await fetch('https://kristina-portfolio-b3zs.onrender.com/api/daily-challenge');
         if (!response.ok) throw new Error("Server Error");
         
         const data = await response.json();
         
-        // עדכון ה-DOM עם המידע מהשרת
         const diffBadge = document.querySelector('.difficulty');
         diffBadge.textContent = data.difficulty;
         
-        // שינוי צבע התגית לפי הקושי
-        diffBadge.className = 'badge difficulty'; // Reset
+        diffBadge.className = 'badge difficulty'; 
         if (data.difficulty === 'Easy') diffBadge.style.background = 'rgba(0, 255, 0, 0.2)';
         if (data.difficulty === 'Medium') diffBadge.style.background = 'rgba(255, 165, 0, 0.2)';
         if (data.difficulty === 'Hard') diffBadge.style.background = 'rgba(255, 0, 0, 0.2)';
@@ -135,7 +124,6 @@ async function fetchDailyChallenge() {
         document.getElementById('lc-desc').textContent = data.description;
         document.getElementById('lc-link').href = data.link;
         
-        // שמירת הכותרת כדי לבקש רמז עליה אח"כ
         window.currentProblemTitle = data.title;
         
     } catch (error) {
@@ -145,7 +133,6 @@ async function fetchDailyChallenge() {
     }
 }
 
-// B. בקשת רמז מהשרת (AI Hint)
 async function getAIHint() {
     const hintBox = document.getElementById('ai-hint-box');
     hintBox.classList.remove('hidden');
@@ -153,7 +140,7 @@ async function getAIHint() {
     hintBox.innerHTML = "<span class='typing-cursor'>Requesting hint from Python Server...</span>";
 
     try {
-        const response = await fetch('/api/hint', {
+        const response = await fetch('https://kristina-portfolio-b3zs.onrender.com/api/hint', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: window.currentProblemTitle })
@@ -169,18 +156,15 @@ async function getAIHint() {
     }
 }
 
-// C. שליחת הודעה בצ'אט (Terminal Chat)
 async function handleKeyPress(event) {
     if (event.key === 'Enter') {
         const input = document.getElementById('user-input');
         const text = input.value;
         if (!text) return;
 
-        // הוספת ההודעה של המשתמש למסך
         addMessageToChat(text, 'user');
         input.value = '';
 
-        // הצגת סימון טעינה
         const loadingId = "loading-" + Date.now();
         const chat = document.getElementById('chat-display');
         const loadingDiv = document.createElement('div');
@@ -190,16 +174,14 @@ async function handleKeyPress(event) {
         chat.appendChild(loadingDiv);
         chat.scrollTop = chat.scrollHeight;
 
-        // שליחה לשרת
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('https://kristina-portfolio-b3zs.onrender.com/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text })
             });
             const data = await response.json();
             
-            // הסרת הטעינה והצגת התשובה
             document.getElementById(loadingId).remove();
             addMessageToChat(data.response, 'bot');
             

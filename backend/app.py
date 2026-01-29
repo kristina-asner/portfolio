@@ -3,13 +3,11 @@ import datetime
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-# server setup
 FRONTEND_FOLDER = os.path.abspath("../frontend")
 app = Flask(__name__, static_folder=FRONTEND_FOLDER, static_url_path='')
 CORS(app)
 
 
-# chatbot knowledge base
 RESUME_DATA = {
     "grades": "Kristina has an outstanding GPA of 97.13. Her top grades are: Data Structures (100), Intro to CS (100), Computer Systems (98). you can see more details on her grades in the Education section of her portfolio.",
     
@@ -32,7 +30,6 @@ RESUME_DATA = {
     "default": "I am Kristina's AI Assistant. Ask me about her Grades, Experience, Skills, Projects, or why you should hire her!"
 }
 
-# rotes for serving frontend
 @app.route('/')
 def serve_index():
     return send_from_directory(app.static_folder, 'index.html')
@@ -41,7 +38,6 @@ def serve_index():
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
 
-# --- API Endpoints ---
 
 @app.route('/api/daily-challenge', methods=['GET'])
 def get_daily_challenge():
@@ -164,7 +160,6 @@ def get_daily_challenge():
 
 
     
-  # --- 1. המילון (חייב להיות ראשון) ---
 LEETCODE_HINTS = {
     "Two Sum": "Use a Hash Map to store numbers: {value: index}. Check if (target - num) exists.",
     "Valid Parentheses": "Use a Stack. Push opening brackets, pop matching closing brackets.",
@@ -186,20 +181,16 @@ LEETCODE_HINTS = {
     "Monotone Increasing Digits": "Find the first dip in digits, decrease the previous digit, and set the rest to 9."
 }
 
-# --- 2. הפונקציה (חייבת להיות אחרי המילון) ---
 @app.route('/api/hint', methods=['POST'])
 def get_hint():
     data = request.json
-    # קבלת הכותרת וניקוי רווחים מיותרים
     problem_title = data.get('title', '').strip()
     
-    # חיפוש במילון שהגדרנו למעלה
     hint = LEETCODE_HINTS.get(problem_title, "No hint available yet for this problem. Try breaking it down!")
     
     return jsonify({"hint": hint})
 
 @app.route('/api/chat', methods=['POST'])
-#chatbot endpoint
 def chat_agent():
     
     user_message = request.json.get('message', '').lower()
