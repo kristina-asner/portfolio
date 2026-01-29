@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristina Asner | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <canvas id="canvas1"></canvas>
+
+    <nav>
+        <div class="logo">Kristina Asner</div>
+        <div class="links">
+            <a href="#leetcode">Daily Grind</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            
+            <div class="nav-icons">
+                <a href="https://www.linkedin.com/in/kristina-asner/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kristinasner200293@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/kristina-asner" target="_blank" class="social-icon"><i class="fab fa-github"></i>
+</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="glass-container">
+        
+        <section id="hero">
+            <p class="subtitle">Hey, I'm Kristina Asner And Welcome To my Portfolio</p>
+            <p class="description">
+                Computer Science Student <span class="glow-text">(GPA 97.13)</span> driven by a passion for efficient algorithms and clean code. <br>
+                <br> 
+                I combine a strong technical foundation with the leadership and resilience gained during high-pressure roles in the IDF. <br>
+                Over the past year, I’ve learned a lot about the world of software development, built skills in programming languages such as <span class="glow-text"> C, C++, Python,</span> JavaScript, and Node.js, and continue to explore new technologies and improve every day.<br>
+                <br> I am currently seeking my first <span class="glow-text">student position</span> in <span class="glow-text">Software Development/DevOps,</span> aiming for a role that bridges the gap between strict logic and creative problem-solving. 
+                
+            </p>
+            <div class="cta-buttons">
+                <a href="#" onclick="toggleTerminal(); return false;" class="btn-primary">Chat with my AI Agent</a>
+                <a href="resume_kristina.pdf" download class="btn-secondary">Download My CV <i class="fas fa-download"></i></a>
+            </div>
+        </section>
+
+        <section id="leetcode" class="section-spacing">
+            <div class="section-header">
+                <h2><i class="fas fa-code"></i> The Daily Grind</h2>
+                <p>Join me on my journey to my first role—let's solve one LeetCode challenge a day!</p>
+            </div>
+            
+            <div class="leetcode-card glass-card">
+                <div class="card-header">
+                    <span class="badge">Daily Challenge</span>
+                    <span class="difficulty hard">Hard</span>
+                </div>
+                <h3 id="lc-title">Loading Challenge...</h3>
+                <p id="lc-desc">Connecting to Server...</p>
+                
+                <div class="card-actions">
+                    <a href="#" id="lc-link" target="_blank" class="btn-small">Solve on LeetCode</a>
+                    <button onclick="getAIHint()" class="btn-hint"><i class="fas fa-robot"></i> AI Hint</button>
+                </div>
+
+                <div id="ai-hint-box" class="hint-box hidden">
+                    <span class="typing-cursor">> Analyzing algorithm complexity...</span>
+                </div>
+            </div>
+        </section>
+<section id="skills" class="skills-section"></section>
+        <div class="skills-grid">
+    <div class="skill-category">
+        <h3>Languages</h3>
+        <div class="tags">
+            <span>Python</span>
+            <span>C++</span>
+            <span>C#</span>
+            <span>Java</span>
+            <span>JavaScript</span> <span>SQL</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>Tools & AI</h3>
+        <div class="tags">
+            <span>Git</span>
+            <span>Linux</span>
+            <span>Monday</span>
+            <span>Lovable</span>
+            <span>Cursor</span>
+            <span>Claude</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>Core Concepts</h3>
+        <div class="tags">
+            <span>Data Structures</span>
+            <span>Algorithms</span>
+            <span>OOP</span>
+            <span>System Design</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <div class="tags">
+            <span>Problem Solving</span>
+            <span>Teamwork</span>
+            <span>Communication</span>
+            <span>Leadership</span>
+            <span>Time Management</span>
+            <span>Creative Thinking</span>
+        </div>
+    </div>
+</div>
+
+        <section id="education" class="section-spacing">
+            <h2>Education</h2>
+            <p class="highlight-text">B.Sc. Computer Science (2024–2027) | Current GPA: <span class="text-orange">97.13</span></p>
+            
+            <h3>Completed Courses (Highlights)</h3>
+            <div class="courses-grid">
+                <div class="course-card grade-100">
+                    <div class="grade">100</div>
+                    <h4>Data Structures</h4>
+                    <p>Advanced structures & complexity analysis.</p>
+                </div>
+                <div class="course-card grade-100">
+                    <div class="grade">100</div>
+                    <h4>Intro to Computer Science</h4>
+                    <p>Recursion, memory management, C.</p>
+                </div>
+                <div class="course-card grade-100">
+                    <div class="grade">100</div>
+                    <h4>Computer Systems</h4>
+                    <p>Assembly, hardware-software interface.</p>
+                </div>
+                <div class="course-card grade-100">
+                    <div class="grade">100</div>
+                    <h4>Calculus 1</h4>
+                    <p>Limits, derivatives, integrals.</p>
+                </div>
+                <div class="course-card grade-100">
+                    <div class="grade">100</div>
+                    <h4>Linear Algebra</h4>
+                    <p>Vector spaces, matrices.</p>
+                </div>
+                
+                <div class="course-card">
+                    <div class="grade">97</div>
+                    <h4>Discrete Math 2</h4>
+                    <p>Combinatorics & Graph Theory.</p>
+                </div>
+                <div class="course-card">
+                    <div class="grade">95</div>
+                    <h4>Discrete Math 1</h4>
+                    <p>Logic, Sets, Induction.</p>
+                </div>
+                <div class="course-card">
+                    <div class="grade">94</div>
+                    <h4>Object Oriented Programming</h4>
+                    <p>Design patterns in C++.</p>
+                </div>
+                 <div class="course-card">
+                    <div class="grade">90</div>
+                    <h4>Adv. Programming Workshop</h4>
+                    <p>Hands-on development.</p>
+                </div>
+            </div>
+
+            <h3 class="mt-5">In Progress (2026) ⏳</h3>
+            <div class="courses-grid in-progress-grid">
+                <div class="course-card in-progress"><h4>Algorithms 1</h4></div>
+                <div class="course-card in-progress"><h4>Computer Networks</h4></div>
+                <div class="course-card in-progress"><h4>Probability</h4></div>
+                <div class="course-card in-progress"><h4>Calculus 2</h4></div>
+                <div class="course-card in-progress">Data Science</div>
+                <div class="course-card in-progress">Algebra 2</div>
+                <div class="course-card in-progress">Algorithms 2</div>
+                <div class="course-card in-progress">Operating Systems</div>
+                
+            </div>
+        </section>
+
+        <section id="experience" class="section-spacing">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2020 – 2024</div>
+                    <div class="timeline-content glass-card">
+                        <h3>Course Commander (Classified)</h3>
+                        <h4>Israel Defense Forces</h4>
+                        <ul>
+                            <li>Led professional training for advanced technology-based systems.</li>
+                            <li>Managed daily operations and mission-critical tasks under pressure (Iron Swords War).</li>
+                            <li>Built structured learning plans and training materials.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-spacing text-center">
+            <h2>Let's Connect !</h2>
+            <p>053-3341226 | kristinasner200293@gmail.com</p>
+            <div class="contact-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kristinasner200293@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://linkedin.com/" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="terminal-wrapper" class="closed">
+        <div class="terminal-header" onclick="toggleTerminal()">
+            <span><i class="fas fa-terminal"></i> KRISTINA_AI_AGENT</span>
+            <span class="minimize-btn">_</span>
+        </div>
+        <div class="terminal-body" id="chat-display">
+            <div class="msg system">
+
+        
+                > Hello! I am Kristina's AI Agent.<br>
+                > Ask me about her GPA, IDF service, projects,skills and more!<br>
+                > lets get started!<br>
+            </div>
+        </div>
+        <div class="terminal-input-area">
+            <span class="prompt">$</span>
+            <input type="text" id="user-input" placeholder="Type a command..." onkeypress="handleKeyPress(event)">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <footer class="site-footer">
+    <div class="footer-content">
+        <p class="footer-quote">
+            Built with logic, love, and a sprinkle of magic. <i class="fas fa-magic" style="color: #ff5100;"></i>
+        </p>
+        
+        <p class="copyright">
+            &copy; Kristina Asner
+        </p>
+    </div>
+</footer>
+</body>
+</html>
