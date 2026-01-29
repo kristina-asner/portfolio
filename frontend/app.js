@@ -48,7 +48,7 @@ class Particle {
         let distance = Math.sqrt(dx*dx + dy*dy);
         
         if (distance < mouse.radius){
-             this.color = '#ff5100';
+             this.color = '#cc4100';
              this.x += this.directionX * 2; this.y += this.directionY * 2;
         } else { this.color = this.baseColor; }
         
