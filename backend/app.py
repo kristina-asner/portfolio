@@ -218,7 +218,7 @@ def chat_agent():
     elif any(word in user_message for word in ["goal", "future", "looking", "position", "role"]):
         response = RESUME_DATA["goals"]
         
-    elif any(word in user_message for word in ["hobby", "fun", "free", "time", "personal", "life"]):
+    elif any(word in user_message for word in ["hobby", "fun","love","like", "free", "time", "personal", "life"]):
         response = RESUME_DATA["hobbies"]
         
     elif any(word in user_message for word in ["start", "available","availability", "when", "now", "time"]):
