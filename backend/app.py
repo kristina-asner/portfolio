@@ -225,7 +225,7 @@ def chat_agent():
         response = RESUME_DATA["availability"]
         
     elif any(word in user_message for word in ["hello", "hi", "hey", "start"]):
-        response = "Hello! I am ready to answer questions about Kristina's career. Try asking 'Why should we hire her?'"
+        response = "Hello! I am ready to answer questions about Kristina's career."
         
     else:
         response = RESUME_DATA["default"]
