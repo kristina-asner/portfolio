@@ -9,7 +9,7 @@ CORS(app)
 
 
 RESUME_DATA = {
-    "grades": "Kristina has an outstanding GPA of 97.13. Her top grades are: Data Structures (100), Intro to CS (100), Computer Systems (98). you can see more details on her grades in the Education section of her portfolio.",
+    "grades": "Kristina has an outstanding GPA of 96. Her top grades are: Data Structures (100), Intro to CS (100), Computer Systems (98). you can see more details on her grades in the Education section of her portfolio.",
     
     "experience": "Kristina served as an IDF Course Commander (2020-2024). She led professional training for advanced tech systems and managed mission-critical tasks under pressure.",
     
@@ -19,7 +19,7 @@ RESUME_DATA = {
     
     "contact": "You can reach Kristina at 053-3341226 or via email at kristinasner200293@gmail.com.",
     
-    "strengths": "Why hire Kristina? She combines a high GPA (97.13) with leadership experience from her IDF service. She is a fast learner, currently teaching herself new technologies. She is highly motivated to integrate into challenging positions and is committed to everything she takes upon herself",
+    "strengths": "Why hire Kristina? She combines a high GPA (96) with leadership experience from her IDF service. She is a fast learner, currently teaching herself new technologies. She is highly motivated to integrate into challenging positions and is committed to everything she takes upon herself",
     
     "goals": "Kristina is looking for her first student Developer or DevOps role where she can tackle complex challenges and grow within a strong engineering team.",
     

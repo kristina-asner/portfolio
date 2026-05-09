@@ -9,7 +9,7 @@ let particlesArray;
 
 const symbols = [
     'Python', 'C++', 'C#', 'SQL', 
-    'GIT', 'OOP', '97.13', 
+    'GIT', 'OOP', '96', 
     '{ }', '</>', '[]', '&&', 
     '0', '1'
 ];
